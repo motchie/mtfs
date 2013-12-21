@@ -1,0 +1,37 @@
+#!/usr/bin/env perl 
+# Copyright (C) 2013, Toru Motchie MOCHIDA <motchie@motchie.com> All Rights Reserved.
+
+use strict;
+use warnings;
+
+use FindBin qw( $Bin );
+use Cwd;
+use lib ( "$FindBin::Bin/../lib", "$FindBin::Bin/../extlib" );
+
+require MT;
+my $mt = MT->new() or die MT->errstr;
+
+use Fuse::Simple qw(accessor main);
+
+my $mtfs = { templates => \&templates_list, };
+
+Fuse::Simple::main(
+    "mountpoint" => "/mnt",
+    "debug"      => 0,
+    "fuse_debug" => 0,
+    "threaded"   => 0,
+    "/"          => $mtfs,
+);
+
+sub templates_list {
+    my %templates;
+
+    my $iter = MT->model('template')->load_iter();
+    while ( my $obj = $iter->() ) {
+        $templates{ $obj->identifier } = sub {
+            return accessor( \$obj->text );
+        };
+    }
+
+    return \%templates;
+}
