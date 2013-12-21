@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>MTFS by motchie</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>MTFS</h1>
+        <p>Movable Type as a File System.</p>
+
+        <p class="view"><a href="https://github.com/motchie/mtfs">View the Project on GitHub <small>motchie/mtfs</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/motchie/mtfs/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/motchie/mtfs/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/motchie/mtfs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="mtfs" class="anchor" href="#mtfs"><span class="octicon octicon-link"></span></a>mtfs</h1>
+
+<p>Movable Type as a File System.</p>
+
+<h3>
+<a name="what-is-mtfs" class="anchor" href="#what-is-mtfs"><span class="octicon octicon-link"></span></a>What is mtfs?</h3>
+
+<p>mtfs is <a href="http://fuse.sourceforge.net/">FUSE</a> implementation of <a href="http://www.movabletype.org/">Movable Type</a>.</p>
+
+<p>It represents MT's objects as files and directoris.</p>
+
+<p>I.E. You can edit MT's template with your favorite text editor, and no needs to use admin screen. </p>
+
+<h3>
+<a name="current-status" class="anchor" href="#current-status"><span class="octicon octicon-link"></span></a>Current Status</h3>
+
+<p>Current Status of this software is alpha or just a sample.</p>
+
+<h3>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ul>
+<li>Magnanimous mind.</li>
+<li>Linux (Tested with: CentOS 6.5)</li>
+<li>Root privilege user</li>
+<li>
+<a href="http://movabletype.org/start/">Movable Type</a> installed. (Tested with: MOTS 5.2.9 ja)</li>
+<li>
+<a href="http://search.cpan.org/%7Enoseynick/Fuse-Simple-1.00/">Fuse::Simple</a> installed.</li>
+</ul><h3>
+<a name="test-run" class="anchor" href="#test-run"><span class="octicon octicon-link"></span></a>Test run</h3>
+
+<ol>
+<li>Copy mtfs to /path/to/mt/tools</li>
+<li><code>cd /path/to/mt</code></li>
+<li><code>sudo perl ./tools/mtfs</code></li>
+<li>Launch another terminal.</li>
+<li><code>sudo ls -lha /mnt/</code></li>
+<li>You'll see a 'templates' directory.</li>
+<li><code>sudo ls -lha /mnt/templates</code></li>
+<li>You'll see many files which filenames are template identifier of your MT.</li>
+<li>View some files. For example: /mnt/templates/rsd</li>
+<li>You'll see file contents exactly same as you'll see on MT's admin screen.</li>
+<li>Press Ctrl+C in terminal which runs mtfs.</li>
+<li>
+<code>sudo umount /mnt</code> in rest terminal.</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/motchie">motchie</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-46661952-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
