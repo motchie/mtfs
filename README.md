@@ -21,7 +21,7 @@ Current Status of this software is alpha or just a sample.
 - Magnanimous mind.
 - Linux (Tested with: CentOS 6.5)
 - Root privilege user
-- [Movable Type](http://movabletype.org/start/) installed. (Tested with: MOTS 5.2.9 ja)
+- [Movable Type](http://movabletype.org/start/) installed. (Tested with: MTOS 5.2.9 ja)
 - [Fuse::Simple] (http://search.cpan.org/~noseynick/Fuse-Simple-1.00/) installed.
 
 ### Test run
