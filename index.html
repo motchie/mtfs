@@ -38,7 +38,7 @@
 
 <p>mtfs is <a href="http://fuse.sourceforge.net/">FUSE</a> implementation of <a href="http://www.movabletype.org/">Movable Type</a>.</p>
 
-<p>It represents MT's objects as files and directoris.</p>
+<p>It represents MT's objects as files and directories.</p>
 
 <p>I.E. You can edit MT's template with your favorite text editor, and no needs to use admin screen. </p>
 
@@ -55,7 +55,7 @@
 <li>Linux (Tested with: CentOS 6.5)</li>
 <li>Root privilege user</li>
 <li>
-<a href="http://movabletype.org/start/">Movable Type</a> installed. (Tested with: MOTS 5.2.9 ja)</li>
+<a href="http://movabletype.org/start/">Movable Type</a> installed. (Tested with: MTOS 5.2.9 ja)</li>
 <li>
 <a href="http://search.cpan.org/%7Enoseynick/Fuse-Simple-1.00/">Fuse::Simple</a> installed.</li>
 </ul><h3>
@@ -68,10 +68,96 @@
 <li>Launch another terminal.</li>
 <li><code>sudo ls -lha /mnt/</code></li>
 <li>You'll see a 'templates' directory.</li>
+</ol><pre><code>[motchie@localhost]~% sudo ls -lha /mnt
+total 5.0K
+drwxr-xr-x   1 root root    1 Dec 22 05:31 .
+dr-xr-xr-x. 22 root root 4.0K Dec 21 23:39 ..
+drwxr-xr-x   1 root root    1 Dec 22 05:31 templates
+</code></pre>
+
+<ol>
 <li><code>sudo ls -lha /mnt/templates</code></li>
 <li>You'll see many files which filenames are template identifier of your MT.</li>
+</ol><pre><code>[motchie@localhost]~% sudo ls -lha /mnt/templates
+total 25K
+drwxr-xr-x 1 root root    1 Dec 22 05:31 .
+drwxr-xr-x 1 root root    1 Dec 22 05:31 ..
+-rw-r--r-- 1 root root  200 Dec 22 05:31 2column_layout_sidebar
+-rw-r--r-- 1 root root  138 Dec 22 05:31 3column_layout_primary_sidebar
+-rw-r--r-- 1 root root   62 Dec 22 05:31 3column_layout_secondary_sidebar
+-rw-r--r-- 1 root root  624 Dec 22 05:31 banner_footer
+-rw-r--r-- 1 root root  681 Dec 22 05:31 banner_header
+-rw-r--r-- 1 root root  376 Dec 22 05:31 blogs
+-rw-r--r-- 1 root root 1.1K Dec 22 05:31 comment_detail
+-rw-r--r-- 1 root root  290 Dec 22 05:31 comment_listing
+-rw-r--r-- 1 root root 6.9K Dec 22 05:31 comment_preview
+-rw-r--r-- 1 root root 2.2K Dec 22 05:31 comment_response
+-rw-r--r-- 1 root root  322 Dec 22 05:31 comment_throttle
+-rw-r--r-- 1 root root  415 Dec 22 05:31 commenter_confirm
+-rw-r--r-- 1 root root  304 Dec 22 05:31 commenter_notify
+-rw-r--r-- 1 root root 5.2K Dec 22 05:31 comments
+-rw-r--r-- 1 root root  334 Dec 22 05:31 creative_commons
+-rw-r--r-- 1 root root 1.2K Dec 22 05:31 dynamic_error
+-rw-r--r-- 1 root root 2.2K Dec 22 05:31 entry_summary
+-rw-r--r-- 1 root root 2.2K Dec 22 05:31 feed_recent
+-rw-r--r-- 1 root root   73 Dec 22 05:31 footer-email
+-rw-r--r-- 1 root root  528 Dec 22 05:31 html_head
+-rw-r--r-- 1 root root  45K Dec 22 05:31 javascript
+-rw-r--r-- 1 root root  144 Dec 22 05:31 lockout-ip
+-rw-r--r-- 1 root root  214 Dec 22 05:31 lockout-user
+-rw-r--r-- 1 root root 1.3K Dec 22 05:31 main_index
+-rw-r--r-- 1 root root  324 Dec 22 05:31 main_index_widgets_group
+-rw-r--r-- 1 root root 1.4K Dec 22 05:31 new-comment
+-rw-r--r-- 1 root root 1.9K Dec 22 05:31 new-ping
+-rw-r--r-- 1 root root 1.1K Dec 22 05:31 notify-entry
+-rw-r--r-- 1 root root  278 Dec 22 05:31 openid
+-rw-r--r-- 1 root root 2.4K Dec 22 05:31 page
+-rw-r--r-- 1 root root  953 Dec 22 05:31 pages_list
+-rw-r--r-- 1 root root  476 Dec 22 05:31 popup_image
+-rw-r--r-- 1 root root  274 Dec 22 05:31 powered_by
+-rw-r--r-- 1 root root  662 Dec 22 05:31 recent_assets
+-rw-r--r-- 1 root root  700 Dec 22 05:31 recent_comments
+-rw-r--r-- 1 root root  557 Dec 22 05:31 recent_entries
+-rw-r--r-- 1 root root  148 Dec 22 05:31 recover-password
+-rw-r--r-- 1 root root  782 Dec 22 05:31 rsd
+-rw-r--r-- 1 root root 1.5K Dec 22 05:31 search
+-rw-r--r-- 1 root root 6.6K Dec 22 05:31 search_results
+-rw-r--r-- 1 root root  894 Dec 22 05:31 sidebar
+-rw-r--r-- 1 root root 1.7K Dec 22 05:31 signin
+-rw-r--r-- 1 root root  122 Dec 22 05:31 styles
+-rw-r--r-- 1 root root  960 Dec 22 05:31 syndication
+-rw-r--r-- 1 root root  496 Dec 22 05:31 tag_cloud
+-rw-r--r-- 1 root root 1.1K Dec 22 05:31 technorati_search
+-rw-r--r-- 1 root root 1.4K Dec 22 05:31 trackbacks
+-rw-r--r-- 1 root root  442 Dec 22 05:31 verify-subscribe
+[motchie@localhost]~%
+</code></pre>
+
+<ol>
 <li>View some files. For example: /mnt/templates/rsd</li>
 <li>You'll see file contents exactly same as you'll see on MT's admin screen.</li>
+</ol><pre><code>[motchie@localhost]~% sudo more /mnt/templates/rsd
+&lt;$mt:HTTPContentType type="application/rsd+xml"$&gt;&lt;?xml version="1.0"?&gt;
+&lt;rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd"&gt;
+&lt;service&gt;
+&lt;engineName&gt;&lt;$mt:ProductName version="1"$&gt;&lt;/engineName&gt;
+&lt;engineLink&gt;http://www.sixapart.com/movabletype/&lt;/engineLink&gt;
+&lt;homePageLink&gt;&lt;$mt:BlogURL$&gt;&lt;/homePageLink&gt;
+&lt;apis&gt;
+&lt;api name="MetaWeblog" preferred="true" apiLink="&lt;$mt:CGIPath$&gt;&lt;$mt:XMLRPCScript
+$&gt;" blogID="&lt;$mt:BlogID$&gt;" /&gt;
+&lt;api name="MovableType" preferred="false" apiLink="&lt;$mt:CGIPath$&gt;&lt;$mt:XMLRPCScri
+pt$&gt;" blogID="&lt;$mt:BlogID$&gt;" /&gt;
+&lt;api name="Blogger" preferred="false" apiLink="&lt;$mt:CGIPath$&gt;&lt;$mt:XMLRPCScript$&gt;
+" blogID="&lt;$mt:BlogID$&gt;" /&gt;
+&lt;api name="Atom" preferred="false" apiLink="&lt;$mt:CGIPath$&gt;&lt;$mt:AtomScript$&gt;/webl
+og" blogID="&lt;$mt:BlogID$&gt;" /&gt;
+&lt;/apis&gt;
+&lt;/service&gt;
+&lt;/rsd&gt;
+</code></pre>
+
+<ol>
 <li>Press Ctrl+C in terminal which runs mtfs.</li>
 <li>
 <code>sudo umount /mnt</code> in rest terminal.</li>
