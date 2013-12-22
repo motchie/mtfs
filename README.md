@@ -7,7 +7,7 @@ Movable Type as a File System.
 
 mtfs is [FUSE](http://fuse.sourceforge.net/) implementation of [Movable Type](http://www.movabletype.org/).
 
-It represents MT's objects as files and directoris.
+It represents MT's objects as files and directories.
 
 I.E. You can edit MT's template with your favorite text editor, and no needs to use admin screen. 
 
