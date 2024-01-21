@@ -128,3 +128,6 @@ og" blogID="<$mt:BlogID$>" />
 
 11. Press Ctrl+C in terminal which runs mtfs.
 12. `sudo umount /mnt` in rest terminal.
+
+### See Also
+https://adventar.org/calendars/92
